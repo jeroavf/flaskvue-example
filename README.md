@@ -1,4 +1,10 @@
-# admin
+Aplicação utilizando Flask + Vue com Flask servindo o idenx.html e api Rest 
+
+# Python 
+pip install -r requirements.txt 
+
+
+#  Vue 
 
 ## Project setup
 ```
@@ -27,3 +33,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+# Execução
+npm run build 
+python app.py - Acesso em http://localhost:5000 

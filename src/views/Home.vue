@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <dir>
+    <h1> Home </h1>
+    <b-button variant="primary" @click="getMsg()">
+      Get Message from Python
+    </b-button>
+    <br/>
+    <b-alert show dismissible>
+      {{ msg }}
+    </b-alert>
+
+  </dir>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import axios from 'axios';
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      msg: ' ',
+    };
   },
+  methods: {
+    getMsg() {
+      const path = 'http://localhost:5000/ping';
+      axios.get(path)
+        .then((res) => {
+          this.msg = res.data;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+  },
+
 };
 </script>

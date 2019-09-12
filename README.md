@@ -36,4 +36,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 # Execução
 npm run build 
+
 python app.py - Acesso em http://localhost:5000 
